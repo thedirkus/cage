@@ -11,7 +11,7 @@ import org.lwjgl.opengl.*;
 public class Window {
 
 	int		_x, _y, _width, _height, _fps;
-	List<Graphic> _graphics;
+	List<Drawable> _contents;
 	
 	public Window(int desiredFPS, int x, int y, int width, int height){
 		
@@ -20,7 +20,7 @@ public class Window {
 		_y 		=	y;
 		_width  =	width;
 		_height =   height;
-		_graphics = new LinkedList<Graphic>();
+		_contents = new LinkedList<Drawable>();
 	}
 	
 	
@@ -52,7 +52,7 @@ public class Window {
 			Display.destroy();
 		} else {
 			
-			for(Graphic g : _graphics)
+			for(Drawable g : _contents)
 				g.draw();
 			
 			Display.update();
@@ -64,7 +64,7 @@ public class Window {
 	
 	public void add(Graphic g){
 		
-		_graphics.add(g);
+		_contents.add(g);
 	}
 	
 

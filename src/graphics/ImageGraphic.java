@@ -40,7 +40,7 @@ public class ImageGraphic extends Graphic {
 
 	@Override
 	public void set(String parameter, String value) {
-
+		
 		if (parameter.equals("file")) {
 
 			if (_textures.get(value) != null) {
@@ -53,7 +53,7 @@ public class ImageGraphic extends Graphic {
 				setAnchorY(getAnchorY() * getHeight() / oldHeight);
 
 			} else if (loadImage()) {
-
+				
 				_imageLoaded = true;
 				_imageToBind = true;
 				_texID       = _textures.size();
