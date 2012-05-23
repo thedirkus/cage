@@ -45,11 +45,17 @@ public class Window {
 	}
 	
 	
-	public void update(){
+	/**
+	 * Updates the Window State.  Returns true if still open, otherwise returns false
+	 * if something happened to the window or it is closed.
+	 * @return
+	 */
+	public boolean update(){
 		
 		if(Display.isCloseRequested()){
 			System.out.println("Closing...");
 			Display.destroy();
+			return false;
 		} else {
 			
 			for(Drawable g : _contents)
@@ -57,6 +63,7 @@ public class Window {
 			
 			Display.update();
 			Display.sync(_fps);
+			return true;
 		}
 	}
 	

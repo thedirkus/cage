@@ -41,6 +41,8 @@ public class ImageGraphic extends Graphic {
 	@Override
 	public void set(String parameter, String value) {
 		
+		super.set(parameter, value);
+		
 		if (parameter.equals("file")) {
 
 			if (_textures.get(value) != null) {
@@ -106,14 +108,17 @@ public class ImageGraphic extends Graphic {
 
 
 	private boolean loadImage() {
-
+		System.out.println("Trying to load image..." + get("file"));
+		if(get("file") != null) {
+			System.out.println("Filename: " + getClass().getResource(get("file")).toString());
+		}
 		try {
 			URL           imageFile = getClass().getResource(get("file"));
 			BufferedImage texture   = ImageIO.read(imageFile);
 			
 			_texWidth  = texture.getWidth();
 			_texHeight = texture.getHeight();
-
+			System.out.println(_texWidth);
 			int   texNumPix = _texWidth*_texHeight;
 			int[] rgbArray  = new int[texNumPix];
 
@@ -131,6 +136,19 @@ public class ImageGraphic extends Graphic {
 					newblag = (( blag << 8 ) | ( blag >>> (24) ));
 					rgbIntBuf.put(i, newblag);
 				}
+			}
+			
+			// Flip Image Vertically
+			int temp,row,offset,swappedIndex;
+			for(int i = 0; i<texNumPix/2; i++){
+				
+				row = i/_texWidth;
+				offset = i%_texWidth;
+				swappedIndex = (_texHeight-row-1)*_texWidth+offset;
+				
+				temp = rgbIntBuf.get(i);
+				rgbIntBuf.put(i, rgbIntBuf.get(swappedIndex));
+				rgbIntBuf.put(swappedIndex, temp);
 			}
 			
 			return true;
