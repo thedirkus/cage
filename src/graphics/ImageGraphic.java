@@ -55,7 +55,7 @@ public class ImageGraphic extends Graphic {
 				setAnchorY(getAnchorY() * getHeight() / oldHeight);
 
 			} else if (loadImage()) {
-				
+
 				_imageLoaded = true;
 				_imageToBind = true;
 				_texID       = _textures.size();
@@ -108,17 +108,14 @@ public class ImageGraphic extends Graphic {
 
 
 	private boolean loadImage() {
-		System.out.println("Trying to load image..." + get("file"));
-		if(get("file") != null) {
-			System.out.println("Filename: " + getClass().getResource(get("file")).toString());
-		}
+		
 		try {
 			URL           imageFile = getClass().getResource(get("file"));
 			BufferedImage texture   = ImageIO.read(imageFile);
 			
 			_texWidth  = texture.getWidth();
 			_texHeight = texture.getHeight();
-			System.out.println(_texWidth);
+			
 			int   texNumPix = _texWidth*_texHeight;
 			int[] rgbArray  = new int[texNumPix];
 
