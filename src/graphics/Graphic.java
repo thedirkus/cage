@@ -35,10 +35,10 @@ public abstract class Graphic implements Drawable, Parameterizable {
 		// the reason you push if the same reason you save s registers 
 		// - other functions might use old matrices - DON'T DELETE, MASON
 		glPushMatrix();
-		glTranslatef(_x, _y, 0);
-		glRotatef((float) Math.toDegrees(_rotation), 0, 0, 1);
-		glTranslatef(-_anchorX, -_anchorY, 0);
-		glScalef(_width, _height, 1);
+		glTranslated(_x, _y, 0);
+		glRotated(_rotation, 0, 0, 1);
+		glTranslated(-_anchorX, -_anchorY, 0);
+		glScaled(_width, _height, 1); 
 		
 		drawNormalized();
 		

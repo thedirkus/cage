@@ -26,11 +26,12 @@ public class Window {
 	
 	
 	public void start() {
-		
+				
 		try {
 			
 			Display.setDisplayMode(new DisplayMode(_width, _height));
 			Display.create();
+			Display.setVSyncEnabled(true);
 		} catch (LWJGLException e) {
 			
 			System.out.println("Error: Display could not create()");
@@ -38,9 +39,22 @@ public class Window {
 		}
 		
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
+		GL11.glShadeModel(GL11.GL_SMOOTH);
+		GL11.glDisable(GL11.GL_DEPTH_TEST);
+		GL11.glDisable(GL11.GL_LIGHTING);
+		
+		GL11.glClearColor(0f, 0f, 0f, 0f);
+		GL11.glClearDepth(1);
+		
+		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+		
+		GL11.glViewport(0, 0, _width, _height);
+		GL11.glMatrixMode(GL11.GL_MODELVIEW);
+		
 		GL11.glMatrixMode(GL11.GL_PROJECTION);
 		GL11.glLoadIdentity();
-		GL11.glOrtho(0, _width, 0, _height, 1, -1);
+		GL11.glOrtho(0, _width, _height, 0, 1, -1);
 		GL11.glMatrixMode(GL11.GL_MODELVIEW);
 	}
 	
@@ -57,7 +71,7 @@ public class Window {
 			Display.destroy();
 			return false;
 		} else {
-			
+			GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
 			for(Drawable g : _contents)
 				g.draw();
 			
@@ -74,5 +88,14 @@ public class Window {
 		_contents.add(g);
 	}
 	
+	
+	public void remove(Graphic g){
+		
+		_contents.remove(g);
+	}
+	
 
+	public int getHeight(){ return _height;	}
+	public int getWidth() { return _width;  }
+	
 }

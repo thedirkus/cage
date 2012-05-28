@@ -16,6 +16,7 @@ public class TextGraphic extends Graphic {
 	private int				_fontStyle;
 	private int				_fontSize;
 	private Color			_fontColor;
+	private boolean			_antialias;
 
 	// Font Faces
 	public static final String		TIMESNEWROMAN = "Times New Roman";
@@ -27,15 +28,16 @@ public class TextGraphic extends Graphic {
 		super();
 	}
 	
-	public void setAttributes(String text, String font, int style, int size, Color color){
+	public void setAttributes(String text, String font, int style, int size, Color color, boolean antialias){
 		
 		_text 		= text;
 		_fontFace 	= font;
 		_fontStyle 	= style;
 		_fontSize 	= size;
 		_fontColor 	= color;
+		_antialias  = antialias;
 		
-		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), false);
+		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), _antialias);
 	}
 	
 	
@@ -43,7 +45,7 @@ public class TextGraphic extends Graphic {
 		
 		_text = text;
 		
-		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), false);
+		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), _antialias);
 	}
 	
 	public String getText() {
@@ -52,8 +54,8 @@ public class TextGraphic extends Graphic {
 	}
 	
 	@Override
-	public void drawNormalized() {
-		
+	public void draw() {
+		Color.white.bind();
 	    _font.drawString(this.getX(), this.getY(), _text, _fontColor);		
 	}
 
@@ -68,7 +70,7 @@ public class TextGraphic extends Graphic {
 
 	public void setFontFace(String _fontFace) {
 		this._fontFace = _fontFace;
-		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), false);
+		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), _antialias);
 	}
 
 
@@ -79,7 +81,7 @@ public class TextGraphic extends Graphic {
 
 	public void setFontStyle(int _fontStyle) {
 		this._fontStyle = _fontStyle;
-		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), false);
+		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), _antialias);
 	}
 
 
@@ -90,7 +92,7 @@ public class TextGraphic extends Graphic {
 
 	public void setFontSize(int _fontSize) {
 		this._fontSize = _fontSize;
-		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), false);
+		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), _antialias);
 	}
 
 
@@ -100,9 +102,9 @@ public class TextGraphic extends Graphic {
 
 
 	public void setFontColor(Color _fontColor) {
+		
 		this._fontColor = _fontColor;
-		Font awtFont = new Font(_fontFace,_fontStyle,_fontSize);
-		_font = new TrueTypeFont(awtFont, false);
+		_font = new TrueTypeFont(new Font(_fontFace,_fontStyle,_fontSize), _antialias);
 	}
 	
 

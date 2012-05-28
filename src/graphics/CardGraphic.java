@@ -1,5 +1,7 @@
 package graphics;
 
-public class CardGraphic {
-
+public class CardGraphic extends Graphic{
+	
+		
+	
 }
