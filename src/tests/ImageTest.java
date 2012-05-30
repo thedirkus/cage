@@ -4,12 +4,12 @@ import java.awt.Font;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
-import graphics.Box;
-import graphics.Rectangle;
 import graphics.RightTriangle;
-import graphics.TextGraphic;
-import graphics.ImageGraphic;
 import graphics.Window;
+import graphics.shapes.Box;
+import graphics.shapes.ImageGraphic;
+import graphics.shapes.Rectangle;
+import graphics.shapes.TextGraphic;
 
 public class ImageTest {
 
@@ -37,10 +37,8 @@ public class ImageTest {
 		rect.setAnchorY(50);
 		
 		Box box = new Box(1000,150);
-		box.setX(250);
-		box.setY(-250);
 		box.setColor(0, 1, 0, 1);
-		box.setZ(1);
+
 		
 		ImageGraphic ig = new ImageGraphic();
 		ig.setTexture("PNG", "custom/images/smile.png");

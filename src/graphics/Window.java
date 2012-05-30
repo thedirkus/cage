@@ -77,10 +77,16 @@ public class Window {
 			
 			Display.update();
 			Display.sync(_fps);
+						
 			return true;
 		}
 	}
 	
+	
+	public void setColor(float r, float g, float b, float a){
+		
+		GL11.glClearColor(r, g, b, a);
+	}
 	
 	
 	public void add(Graphic g){

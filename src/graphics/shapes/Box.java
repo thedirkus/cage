@@ -1,22 +1,15 @@
-package graphics;
-
-import graphics.shapes.Vertex;
+package graphics.shapes;
 
 import org.lwjgl.opengl.GL11;
 
-/**
- * Graphic for a full-view Card
- * Includes an image, name, and up to three stats (name, value)
- * Can change the color of the card background and the border
- * @author Ryan
- *
- */
-public class CardGraphic extends Graphic{
-	
+import graphics.Graphic;
+
+public class Box extends Graphic{
+
 	private double	_r = 0, _g = 0, _b = 0, _a = 1;
 	private Vertex	_topleft, _topright, _bottomleft, _bottomright;
 	
-	public CardGraphic (int width, int height) {
+	public Box (int width, int height) {
 		
 		_topleft = new Vertex(0, 0);
 		_topright = new Vertex(width, 0);
@@ -54,5 +47,6 @@ public class CardGraphic extends Graphic{
 		GL11.glEnd();
 		
 	}
+	
 	
 }

@@ -60,6 +60,14 @@ public abstract class Graphic implements Drawable, Parameterizable {
 	 */
 	public void update(float dt) { }
 	
+	
+	/**
+	 * Rotate the shape around its centerpoint regardless of anchorpoints
+	 */
+	public void rotateOnCenter() { }
+	
+	
+	
 	@Override
 	public void set(String parameter, String value) {
 		
@@ -84,8 +92,8 @@ public abstract class Graphic implements Drawable, Parameterizable {
 	public void setX       (float x       ) { _x        = x;        }
 	public void setY       (float y       ) { _y        = y;        }
 	public void setZ       (float z       ) { _z        = z;        }
-	public void setWidth   (float width   ) { _width    = width;    }
-	public void setHeight  (float height  ) { _height   = height;   }
+	public void setScaleX  (float width   ) { _width    = width;    }
+	public void setScaleY  (float height  ) { _height   = height;   }
 	public void setAnchorX (float anchorX ) { _anchorX  = anchorX;  }
 	public void setAnchorY (float anchorY ) { _anchorY  = anchorY;  }
 	public void setRotation(float rotation) { _rotation = rotation; }
