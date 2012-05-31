@@ -11,15 +11,15 @@ import dynamic.Parameterizable;
 
 public abstract class Graphic implements Drawable, Parameterizable {
 
-	private float _x, _y, _z;
-	private float _width, _height;
-	private float _anchorX, _anchorY, _rotation;
+	private double _x, _y, _z;
+	private double _width, _height;
+	private double _anchorX, _anchorY, _rotation;
 	
 	private Map<String, String> _parameters;
 	
 	public Graphic() {
 		
-		_width  = 1;
+		_width = 1;
 		_height = 1;
 		_parameters = new HashMap<String, String>();
 	}
@@ -89,22 +89,22 @@ public abstract class Graphic implements Drawable, Parameterizable {
 	}
 	
 	
-	public void setX       (float x       ) { _x        = x;        }
-	public void setY       (float y       ) { _y        = y;        }
-	public void setZ       (float z       ) { _z        = z;        }
-	public void setScaleX  (float width   ) { _width    = width;    }
-	public void setScaleY  (float height  ) { _height   = height;   }
-	public void setAnchorX (float anchorX ) { _anchorX  = anchorX;  }
-	public void setAnchorY (float anchorY ) { _anchorY  = anchorY;  }
-	public void setRotation(float rotation) { _rotation = rotation; }
+	public void setX       (double x       ) { _x        = x;        }
+	public void setY       (double y       ) { _y        = y;        }
+	public void setZ       (double z       ) { _z        = z;        }
+	public void setScaleX  (double width   ) { _width    = width;    }
+	public void setScaleY  (double height  ) { _height   = height;   }
+	public void setAnchorX (double anchorX ) { _anchorX  = anchorX;  }
+	public void setAnchorY (double anchorY ) { _anchorY  = anchorY;  }
+	public void setRotation(double rotation) { _rotation = rotation; }
 	
 	
-	public float getX       () { return _x;        }
-	public float getY       () { return _y;        }
-	public float getZ       () { return _z;        }
-	public float getWidth   () { return _width;    }
-	public float getHeight  () { return _height;   }
-	public float getAnchorX () { return _anchorX;  }
-	public float getAnchorY () { return _anchorY;  }
-	public float getRotation() { return _rotation; }
+	public double getX       () { return _x;        }
+	public double getY       () { return _y;        }
+	public double getZ       () { return _z;        }
+	public double getScaleX  () { return _width;    }
+	public double getScaleY  () { return _height;   }
+	public double getAnchorX () { return _anchorX;  }
+	public double getAnchorY () { return _anchorY;  }
+	public double getRotation() { return _rotation; }
 }

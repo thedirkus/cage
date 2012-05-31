@@ -25,9 +25,10 @@ public class TextGraphic extends Graphic {
 	
 	
 	
-	public TextGraphic() {
+	public TextGraphic(String text, String font, int style, int size, Color color, boolean antialias) {
 		
 		super();
+		setAttributes(text, font, style, size, color, antialias);
 	}
 	
 	public void setAttributes(String text, String font, int style, int size, Color color, boolean antialias){
@@ -58,7 +59,7 @@ public class TextGraphic extends Graphic {
 	@Override
 	public void draw() {
 		Color.white.bind();
-	    _font.drawString(this.getX(), this.getY(), _text, _fontColor);		
+	    _font.drawString((float) getX(), (float) getY(), _text, _fontColor);		
 	}
 
 	

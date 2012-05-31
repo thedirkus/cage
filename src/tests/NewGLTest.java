@@ -2,6 +2,7 @@ package tests;
 
 import graphics.Window;
 import graphics.shapes.Box;
+import graphics.shapes.CardStock;
 import graphics.shapes.Line;
 import graphics.shapes.Rectangle;
 import graphics.shapes.Triangle;
@@ -35,6 +36,14 @@ public class NewGLTest {
 		Line line = new Line ( new Vertex(0,0), new Vertex(100,0));
 		line.setX(400);
 		line.setY(10);
+		
+		
+		
+		CardStock cardstock = new CardStock(200, 350);
+		cardstock.setX(500);
+		cardstock.setY(100);
+		cardstock.setBackgroundColor(.5, 0, .5, 1);
+		cardstock.setBorderColor(0, 1, 0, 1);
 			
 		
 		w.add(box);
@@ -42,6 +51,7 @@ public class NewGLTest {
 		w.add(rect2);
 		w.add(tri);
 		w.add(line);
+		w.add(cardstock);
 		
 		w.setColor(1, 1, 0, 1);
 		

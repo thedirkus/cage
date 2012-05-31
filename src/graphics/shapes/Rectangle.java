@@ -9,11 +9,11 @@ public class Rectangle extends Graphic{
 	private double	_r = 0, _g = 0, _b = 0, _a = 1;
 	private double  _width, _height;
 	
-	public Rectangle (int width, int height) {
+	public Rectangle (double _width2, double _height2) {
 		
 		super();
-		setWidth(width);
-		setHeight(height);
+		setWidth(_width2);
+		setHeight(_height2);
 	}
 	
 	
@@ -26,8 +26,11 @@ public class Rectangle extends Graphic{
 	}
 	
 	
-	public void setWidth (int width)  {	_width = width;   }
-	public void setHeight(int height) { _height = height; }
+	public void setWidth (double _width2)  {	_width = _width2;   }
+	public void setHeight(double _height2) { 	_height = _height2; }
+	
+	public double getWidth()	{ return _width;  }
+	public double getHeight()	{ return _height; }
 	
 	
 	@Override
