@@ -35,13 +35,15 @@ public class ImageTest {
 		ig.setX(150);
 		ig.setY(150);
 		
-
+		TextGraphic t = new TextGraphic("hello", TextGraphic.TIMESNEWROMAN, Font.PLAIN, 24, new Color(1,0,0), true);
+		t.setX(100);
 
 		w.add(ig);
+		w.add(t);
 		w.add(rect);
 
 		w.add(box);
-
+		w.setColor(1, 1, 1, 1);
 				
 		while(w.update()) { 
 			

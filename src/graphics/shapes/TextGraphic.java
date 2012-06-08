@@ -57,9 +57,10 @@ public class TextGraphic extends Graphic {
 	}
 	
 	@Override
-	public void draw() {
+	public void drawNormalized() {
+		
 		Color.white.bind();
-	    _font.drawString((float) getX(), (float) getY(), _text, _fontColor);		
+	    _font.drawString(0, 0, _text, _fontColor);		
 	}
 
 	

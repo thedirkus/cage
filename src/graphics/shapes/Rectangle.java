@@ -35,7 +35,7 @@ public class Rectangle extends Graphic{
 	
 	@Override
 	public void drawNormalized() {
-				
+		GL11.glBindTexture(GL11.GL_TEXTURE_2D, 0);		
 		GL11.glBegin(GL11.GL_QUADS);
 			GL11.glColor4d(_r, _g, _b, _a);
 

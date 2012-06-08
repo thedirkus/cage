@@ -54,7 +54,7 @@ public class ImageGraphic extends Graphic{
 	
 	@Override
 	public void drawNormalized() {
-		
+		GL11.glBindTexture(GL11.GL_TEXTURE_2D, 0);
 		Color.white.bind();
 		_texture.bind();
 		

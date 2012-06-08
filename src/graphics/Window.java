@@ -83,9 +83,9 @@ public class Window {
 	}
 	
 	
-	public void setColor(float r, float g, float b, float a){
+	public void setColor(double r, double g, double b, double a){
 		
-		GL11.glClearColor(r, g, b, a);
+		GL11.glClearColor((float) r, (float) g, (float) b, (float) a);
 	}
 	
 	

@@ -37,24 +37,24 @@ public class CardGraphic extends Graphic{
 		_image = new ImageGraphic(imagetype, imagepath, (_width*0.9), (height*0.5));
 		_image.setX(_width*.05);
 		_image.setY(_height*.09);
-//		
-//		_name = new TextGraphic(name, TextGraphic.TIMESNEWROMAN, Font.PLAIN, (int) Math.round(height*0.075), new Color(0,0,0), true);
-//		_name.setX(_width*.05);
-//		_name.setY(_height*.02);
-//		
-//		_infoA = new TextGraphic(name, TextGraphic.TIMESNEWROMAN, Font.PLAIN, (int) Math.round(height*0.05), new Color(0,0,0), true);
-//		_infoB = new TextGraphic(name, TextGraphic.TIMESNEWROMAN, Font.PLAIN, (int) Math.round(height*0.05), new Color(0,0,0), true);
-//		_infoC = new TextGraphic(name, TextGraphic.TIMESNEWROMAN, Font.PLAIN, (int) Math.round(height*0.05), new Color(0,0,0), true);
-//		_infoA.setX(_width*.05);
-//		_infoB.setX(_width*.05);
-//		_infoC.setX(_width*.05);
-//		
-//		double infostart = _height*.09 + _image.getHeight();
-//		System.out.println(infostart);
-//		
-//		_infoA.setY(infostart + _height*.02);
-//		_infoB.setY(infostart + _height*.09);
-//		_infoC.setY(infostart + _height*.16);
+		
+		_name = new TextGraphic(name, TextGraphic.TIMESNEWROMAN, Font.PLAIN, (int) Math.round(height*0.075), new Color(0,0,0), true);
+		_name.setX(_width*.05);
+		_name.setY(_height*.01);
+		
+		_infoA = new TextGraphic(infoA, TextGraphic.TIMESNEWROMAN, Font.PLAIN, (int) Math.round(height*0.05), new Color(0,0,0), true);
+		_infoB = new TextGraphic(infoB, TextGraphic.TIMESNEWROMAN, Font.PLAIN, (int) Math.round(height*0.05), new Color(0,0,0), true);
+		_infoC = new TextGraphic(infoC, TextGraphic.TIMESNEWROMAN, Font.PLAIN, (int) Math.round(height*0.05), new Color(0,0,0), true);
+		_infoA.setX(_width*.05);
+		_infoB.setX(_width*.05);
+		_infoC.setX(_width*.05);
+		
+		double infostart = _height*.09 + _image.getHeight();
+		System.out.println(infostart);
+		
+		_infoA.setY(infostart + _height*.02);
+		_infoB.setY(infostart + _height*.09);
+		_infoC.setY(infostart + _height*.16);
 		
 	}
 	
